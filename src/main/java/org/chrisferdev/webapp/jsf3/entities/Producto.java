@@ -16,7 +16,7 @@ public class Producto {
     private Integer precio;
     private String sku;
 
-    @Column(name = "fecha_registro")
+    @Column(name="fecha_registro")
     private LocalDate fechaRegistro;
 
     public Producto() {
