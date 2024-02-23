@@ -16,7 +16,7 @@ public class ProductoRepositoryImpl implements CrudRepository<Producto>{
 
     @Override
     public List<Producto> listar() {
-        return em.createQuery("FROM Producto ", Producto.class).getResultList();
+        return em.createQuery("from Producto ", Producto.class).getResultList();
     }
 
     @Override

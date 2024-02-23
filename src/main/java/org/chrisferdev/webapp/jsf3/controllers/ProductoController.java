@@ -5,6 +5,7 @@ import jakarta.enterprise.inject.Model;
 import jakarta.enterprise.inject.Produces;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
+import org.chrisferdev.webapp.jsf3.entities.Categoria;
 import org.chrisferdev.webapp.jsf3.entities.Producto;
 import org.chrisferdev.webapp.jsf3.services.ProductoService;
 
@@ -45,6 +46,13 @@ public class ProductoController {
         }
         return producto;
     }
+
+    @Produces
+    @Model
+    public List<Categoria> categorias(){
+        return service.listarCategorias();
+    }
+
     public String editar(Long id){
         this.id = id;
         return "form.xhtml";
