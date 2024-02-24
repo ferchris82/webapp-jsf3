@@ -10,7 +10,7 @@ public class ProducerResources {
 
     @Produces
     @RequestScoped
-    public FacesContext beanFacesContext(){
+    public FacesContext beanFacesContext() {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         facesContext.getExternalContext().getFlash().setKeepMessages(true);
         return facesContext;

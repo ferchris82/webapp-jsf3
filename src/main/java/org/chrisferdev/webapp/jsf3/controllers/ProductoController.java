@@ -67,10 +67,10 @@ public class ProductoController {
     public String guardar() {
         System.out.println(producto);
         service.guardar(producto);
-        if(producto.getId() !=null && producto.getId() >0){
+        if (producto.getId() != null && producto.getId() > 0) {
             facesContext.addMessage(null, new FacesMessage("Producto " + producto.getNombre() + " actualizado con exito!"));
         } else {
-            facesContext.addMessage(null, new FacesMessage("Producto " + producto.getNombre() + " creado con exito!"));
+            facesContext.addMessage(null, new FacesMessage("Producto " + producto.getNombre() + " Creado con exito!"));
         }
         return "index.xhtml?faces-redirect=true";
     }
