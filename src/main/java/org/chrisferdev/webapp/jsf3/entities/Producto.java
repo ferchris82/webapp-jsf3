@@ -12,7 +12,7 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty(message = "el campo nombre no puede ser vacío!")
+    @NotEmpty(message = "el campo nombre no puede ser vacio!")
     private String nombre;
 
     @NotNull
@@ -87,8 +87,8 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    //@PrePersist
-    public void prePersist(){
+    //    @PrePersist
+    public void prePersist() {
         fechaRegistro = LocalDate.now();
     }
 

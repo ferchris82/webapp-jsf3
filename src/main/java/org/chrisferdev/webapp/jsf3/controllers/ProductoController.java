@@ -32,15 +32,16 @@ public class ProductoController {
     @RequestScoped
     @Named("listado")
     public List<Producto> findAll() {
+//        return Arrays.asList(new Producto("peras"), new Producto("manzanas"), new Producto("mandarinas"));
         return service.listar();
     }
 
     @Produces
     @Model
-    public Producto producto(){
+    public Producto producto() {
         this.producto = new Producto();
-        if(id != null && id >0){
-            service.porId(id).ifPresent(p ->{
+        if (id != null && id > 0) {
+            service.porId(id).ifPresent(p -> {
                 this.producto = p;
             });
         }
@@ -49,7 +50,7 @@ public class ProductoController {
 
     @Produces
     @Model
-    public List<Categoria> categorias(){
+    public List<Categoria> categorias() {
         return service.listarCategorias();
     }
 
@@ -58,7 +59,7 @@ public class ProductoController {
         return "form.xhtml";
     }
 
-    public String guardar(){
+    public String guardar() {
         System.out.println(producto);
         service.guardar(producto);
         return "index.xhtml?faces-redirect=true";

@@ -19,20 +19,20 @@ public class CategoriaConverter implements Converter<Categoria> {
     private ProductoService service;
 
     @Override
-    public Categoria getAsObject(FacesContext facesContext, UIComponent uiComponent, String id) {
-        if(id == null){
+    public Categoria getAsObject(FacesContext context, UIComponent component, String id) {
+        if (id == null) {
             return null;
         }
         Optional<Categoria> categoriaOptional = service.porIdCategoria(Long.valueOf(id));
-        if(categoriaOptional.isPresent()){
+        if (categoriaOptional.isPresent()) {
             return categoriaOptional.get();
         }
         return null;
     }
 
     @Override
-    public String getAsString(FacesContext facesContext, UIComponent uiComponent, Categoria categoria) {
-        if(categoria == null){
+    public String getAsString(FacesContext context, UIComponent component, Categoria categoria) {
+        if (categoria == null) {
             return "0";
         }
         return categoria.getId().toString();

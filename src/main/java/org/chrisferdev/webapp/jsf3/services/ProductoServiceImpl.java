@@ -48,3 +48,4 @@ public class ProductoServiceImpl implements ProductoService {
         return Optional.ofNullable(categoriaRepository.porId(id));
     }
 }
+

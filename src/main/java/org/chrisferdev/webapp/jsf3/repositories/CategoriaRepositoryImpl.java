@@ -26,7 +26,7 @@ public class CategoriaRepositoryImpl implements CrudRepository<Categoria>{
 
     @Override
     public void guardar(Categoria categoria) {
-        if(categoria.getId() != null && categoria.getId() >0){
+        if (categoria.getId() != null && categoria.getId() > 0) {
             em.merge(categoria);
         } else {
             em.persist(categoria);
