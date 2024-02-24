@@ -63,7 +63,6 @@ public class ProductoController {
         this.id = id;
         return "form.xhtml";
     }
-
     public String guardar() {
         System.out.println(producto);
         service.guardar(producto);
